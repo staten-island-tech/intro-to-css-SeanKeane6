@@ -1,52 +1,83 @@
 
-  .slider {
-    width: 500px;
-    text-align: center;
-    overflow: hidden;
-  }
-  
-  .slides {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-  }
-  
-  .slides >div {
-    scroll-snap-align: start;
-    flex-shrink: 0;
-    width: 500px;
-    //height: 300px;
-    margin-right: 50px;
-    border-radius: 10px;
-    background: #eee;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
-  }
+  $large: 1200px;
 
-  .slider >a {
-    display: inline-flex;
-    background: white;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25%;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    position: relative;
+  img {
+    display: block;
+    max-width: 100%;
   }
   
-  html, body {
-    height: 100%;
+  .wrapper {
     overflow: hidden;
-    box-sizing: border-box;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+  
+    @media screen and (min-width: $large) {
+      grid-template-columns: 1fr 5fr;
+      grid-template-rows: auto;
+    }
   }
-  body {
+  
+  .gallery {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom, #74ABE2, #5563DE);
-    font-family: 'Ropa Sans', sans-serif;
+  
+    @media screen and (min-width: $large) {
+      display: block;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+    }
+  }
+  
+  .gallery-img {
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+    min-width: 100vw;
+    object-fit: cover;
+  
+    @media screen and (min-width: $large) {
+      min-width: auto;
+      min-height: 100vh;
+    }
+  }
+  
+  .navbar{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    grid-row-start: 2;
+  
+    @media screen and (min-width: $large) {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      display: block;
+      grid-row-start: auto;
+    }
+  
+    a {
+      display: flex;
+      min-width: 45vw;
+      margin-right: 10px;
+  
+      @media screen and (min-width: $large) {
+        margin-bottom: 10px;
+        min-height: 200px;
+        min-width: 100%;
+      }
+    }
+  }
+  
+  .nav-img {
+    object-fit: cover;
+    filter: saturate(0);
+    transition: 0.3s ease all;
+  
+    &:hover {
+      transform: scale(1.05);
+      filter: saturate(1);
+    }
   }
