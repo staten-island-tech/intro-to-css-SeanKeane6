@@ -1,83 +1,50 @@
+html,
+body{
+  background-color: salmon;
+  box-sizing: border-box;
+  padding: 0 auto;
+  margin: 0 auto;
+  font-size: 62.5%;
+  display: flex;
+  //justify-content: center;
 
-  $large: 1200px;
+}
 
-  img {
-    display: block;
-    max-width: 100%;
-  }
+.quotes{
+  //width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.slider{
+ // width: 50rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides{
+  display: flex;
+  overflow-x: hidden;
+  scroll-snap-type: mandatory;
+  transition: smooth;
+  transform-origin: center;
+  font-size: 4rem;
+  position: relative;
+}
+
+
+.slides > div{
+  background-color: white;
+  width: 80vw;
+  margin-right: 5rem;
+  transform-origin: center  center;
+  overflow-x: hidden;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   
-  .wrapper {
-    overflow: hidden;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-  
-    @media screen and (min-width: $large) {
-      grid-template-columns: 1fr 5fr;
-      grid-template-rows: auto;
-    }
-  }
-  
-  .gallery {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    display: flex;
-  
-    @media screen and (min-width: $large) {
-      display: block;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      scroll-snap-type: y mandatory;
-    }
-  }
-  
-  .gallery-img {
-    scroll-snap-align: start;
-    margin-bottom: 10px;
-    min-width: 100vw;
-    object-fit: cover;
-  
-    @media screen and (min-width: $large) {
-      min-width: auto;
-      min-height: 100vh;
-    }
-  }
-  
-  .navbar{
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: flex;
-    grid-row-start: 2;
-  
-    @media screen and (min-width: $large) {
-      overflow-y: scroll;
-      overflow-x: hidden;
-      display: block;
-      grid-row-start: auto;
-    }
-  
-    a {
-      display: flex;
-      min-width: 45vw;
-      margin-right: 10px;
-  
-      @media screen and (min-width: $large) {
-        margin-bottom: 10px;
-        min-height: 200px;
-        min-width: 100%;
-      }
-    }
-  }
-  
-  .nav-img {
-    object-fit: cover;
-    filter: saturate(0);
-    transition: 0.3s ease all;
-  
-    &:hover {
-      transform: scale(1.05);
-      filter: saturate(1);
-    }
-  }
+}

@@ -1,111 +1,66 @@
-img {
-  display: block;
-  max-width: 100%;
+html,
+body {
+  background-color: salmon;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 auto;
+  margin: 0 auto;
+  font-size: 62.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.wrapper {
+.quotes {
   overflow: hidden;
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 2fr 1fr;
-      grid-template-rows: 2fr 1fr;
-}
-
-@media screen and (min-width: 1200px) {
-  .wrapper {
-    -ms-grid-columns: 1fr 5fr;
-        grid-template-columns: 1fr 5fr;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
-  }
-}
-
-.gallery {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  -ms-scroll-snap-type: x mandatory;
-      scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 5rem;
 }
 
-@media screen and (min-width: 1200px) {
-  .gallery {
-    display: block;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -ms-scroll-snap-type: y mandatory;
-        scroll-snap-type: y mandatory;
-  }
+.slider {
+  text-align: center;
+  overflow: hidden;
 }
 
-.gallery-img {
-  scroll-snap-align: start;
-  margin-bottom: 10px;
-  min-width: 100vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-@media screen and (min-width: 1200px) {
-  .gallery-img {
-    min-width: auto;
-    min-height: 100vh;
-  }
-}
-
-.navbar {
-  overflow-x: scroll;
-  overflow-y: hidden;
+.slides {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
+  overflow-x: hidden;
+  -ms-scroll-snap-type: mandatory;
+      scroll-snap-type: mandatory;
+  -webkit-transition: smooth;
+  transition: smooth;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  font-size: 4rem;
+  position: relative;
 }
 
-@media screen and (min-width: 1200px) {
-  .navbar {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: block;
-    -ms-grid-row: auto;
-        grid-row-start: auto;
-  }
-}
-
-.navbar a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 45vw;
-  margin-right: 10px;
-}
-
-@media screen and (min-width: 1200px) {
-  .navbar a {
-    margin-bottom: 10px;
-    min-height: 200px;
-    min-width: 100%;
-  }
-}
-
-.nav-img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-filter: saturate(0);
-          filter: saturate(0);
-  -webkit-transition: 0.3s ease all;
-  transition: 0.3s ease all;
-}
-
-.nav-img:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  -webkit-filter: saturate(1);
-          filter: saturate(1);
+.slides > div {
+  background-color: white;
+  width: 80vw;
+  margin-right: 5rem;
+  -webkit-transform-origin: center  center;
+          transform-origin: center  center;
+  overflow-x: hidden;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=slide.css.map */
