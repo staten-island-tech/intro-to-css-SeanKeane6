@@ -1,50 +1,43 @@
-html,
-body{
-  background-color: salmon;
-  box-sizing: border-box;
-  padding: 0 auto;
+html, body{
   margin: 0 auto;
+  padding: 0 auto;
   font-size: 62.5%;
-  display: flex;
-  //justify-content: center;
-
+  box-sizing: border-box;
 }
-
-.quotes{
-  //width: 100%;
-  overflow: hidden;
+.holster {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-left: 5rem;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.slider{
- // width: 50rem;
+.container {
+  display: flex;
+  overflow: auto;
+  height: 10rem
+}
+
+.container.x {
+  width: 90%;
+  flex-flow: row nowrap;
+}
+
+.x.scroll{
+  scroll-snap-type: x mandatory;
+}
+
+.container >div {
   text-align: center;
-  overflow: hidden;
+  scroll-snap-align: center;
+  flex: none;
+  font-size: 5rem;
+  width: 100%;
 }
 
-.slides{
-  display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: mandatory;
-  transition: smooth;
-  transform-origin: center;
-  font-size: 4rem;
-  position: relative;
+.container > div:nth-child(even) {
+  background-color: #87EA87;
 }
 
-
-.slides > div{
-  background-color: white;
-  width: 80vw;
-  margin-right: 5rem;
-  transform-origin: center  center;
-  overflow-x: hidden;
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  
+.container > div:nth-child(odd) {
+  background-color: #87CCEA;
 }

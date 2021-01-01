@@ -1,66 +1,63 @@
-html,
-body {
-  background-color: salmon;
+html, body {
+  margin: 0 auto;
+  padding: 0 auto;
+  font-size: 62.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0 auto;
-  margin: 0 auto;
-  font-size: 62.5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
-.quotes {
-  overflow: hidden;
+.holster {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.slider {
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: auto;
+  height: 10rem;
+}
+
+.container.x {
+  width: 90%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.x.scroll {
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+}
+
+.container > div {
   text-align: center;
-  overflow: hidden;
+  scroll-snap-align: center;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  font-size: 5rem;
+  width: 100%;
 }
 
-.slides {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  overflow-x: hidden;
-  -ms-scroll-snap-type: mandatory;
-      scroll-snap-type: mandatory;
-  -webkit-transition: smooth;
-  transition: smooth;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  font-size: 4rem;
-  position: relative;
+.container > div:nth-child(even) {
+  background-color: #87EA87;
 }
 
-.slides > div {
-  background-color: white;
-  width: 80vw;
-  margin-right: 5rem;
-  -webkit-transform-origin: center  center;
-          transform-origin: center  center;
-  overflow-x: hidden;
-  position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.container > div:nth-child(odd) {
+  background-color: #87CCEA;
 }
 /*# sourceMappingURL=slide.css.map */
